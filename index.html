@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASD Care Coordination Platform</title>
+    <link rel="stylesheet" href="/asset/style.css">
+</head>
+<body>
+    <header>
+        <h1>ASD Care Coordination</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Appointments</a></li>
+                <li><a href="#">Progress</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="search-services">
+            <h2>Find a Service Provider</h2>
+            <input type="text" id="searchInput" placeholder="Search for service providers...">
+            <button onclick="searchService()">Search</button>
+            <ul id="providerList"></ul>
+        </section>
+
+        <section id="appointments">
+            <h2>Manage Appointments</h2>
+            <input type="text" id="appointmentProvider" placeholder="Provider Name">
+            <input type="date" id="appointmentDate">
+            <button onclick="addAppointment()">Add Appointment</button>
+            <ul id="appointmentList"></ul>
+        </section>
+
+        <section id="progress">
+            <h2>Track Progress</h2>
+            <input type="text" id="progressNote" placeholder="Add a progress note...">
+            <button onclick="addProgress()">Add Note</button>
+            <ul id="progressList"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>ASD Care Coordination &copy; 2024</p>
+    </footer>
+
+    <script src="/asset/script.js"></script>
+</body>
+</html>
