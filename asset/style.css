@@ -1,87 +1,94 @@
-* {
-    box-sizing: border-box;
+body {
+    font-family: 'Arial', sans-serif; /* Use a clean, readable font */
+    background-color: #f2f9fb; /* Light background color */
+    color: #333; /* Dark text color for readability */
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
 }
 
-body {
-    background-color: #f4f4f4;
-    color: #333;
-}
-
+/* Header styles */
 header {
-    background-color: #705036;
-    color: #fff;
-    padding: 1rem;
+    background-color: #4a90e2; /* Primary color (blue) */
+    color: #ffffff; /* Text color */
     text-align: center;
+    padding: 20px 0;
 }
 
-header h1 {
-    margin-bottom: 0.5rem;
+/* Logo styles */
+.logo {
+    max-width: 150px; /* Adjust to fit your layout */
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
+/* Navigation styles */
+nav {
+    background-color: #7ed321; /* Secondary color (green) */
+    padding: 10px 0;
 }
 
-nav ul li {
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    color: #fff;
+nav a {
+    color: #ffffff; /* White text for navigation links */
     text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
 }
 
-main {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 1rem;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+nav a:hover {
+    background-color: #6dbd19; /* Darker green on hover */
 }
 
-section {
-    margin-bottom: 2rem;
+/* Form styles */
+form {
+    background-color: #ffffff; /* White background for forms */
+    border: 1px solid #d0d0d0; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px;
+    max-width: 400px; /* Limit width */
+    margin: 20px auto; /* Center the form */
 }
 
-section h2 {
-    color: #705036;
-    margin-bottom: 1rem;
+form input, form select {
+    width: calc(100% - 22px); /* Full width with padding */
+    padding: 10px;
+    margin-bottom: 15px; /* Space between fields */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
 }
 
-input[type="text"], input[type="date"], button {
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    width: 100%;
-    max-width: 400px;
-}
-
+/* Button styles */
 button {
-    background-color: #705036;
-    color: #fff;
-    border: none;
+    background-color: #4a90e2; /* Primary button color (blue) */
+    color: #ffffff; /* White text */
+    border: none; /* No border */
+    padding: 10px 20px;
+    border-radius: 5px; /* Rounded corners */
     cursor: pointer;
+    font-size: 16px;
 }
 
 button:hover {
-    background-color: #5a402b;
+    background-color: #357ab8; /* Darker blue on hover */
 }
 
-ul {
-    list-style-type: none;
-}
-
+/* Footer styles */
 footer {
+    background-color: #4a90e2; /* Primary color (blue) */
+    color: #ffffff; /* Text color */
     text-align: center;
-    padding: 1rem;
-    background-color: #705036;
-    color: #fff;
-    position: fixed;
-    width: 100%;
+    padding: 10px 0;
+    position: relative;
     bottom: 0;
+    width: 100%;
+}
+
+/* Additional classes */
+.hidden {
+    display: none; /* Utility class for hiding elements */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    nav a {
+        display: block; /* Stack navigation links on small screens */
+        margin: 5px 0;
+    }
 }

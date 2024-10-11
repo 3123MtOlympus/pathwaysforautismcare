@@ -1,54 +1,58 @@
-// Sample service providers for demo
-const providers = ["Therapist John Doe", "Speech Therapist Jane Smith", "Occupational Therapy Clinic", "Behavioral Health Center"];
+// scripts.js
 
-function searchService() {
-    const input = document.getElementById('searchInput').value.toLowerCase();
-    const providerList = document.getElementById('providerList');
-    providerList.innerHTML = '';
+// Temporary storage for users (in a real app, this would be handled with a backend)
+let users = [];
 
-    const filteredProviders = providers.filter(provider => provider.toLowerCase().includes(input));
-
-    if (filteredProviders.length === 0) {
-        providerList.innerHTML = '<li>No providers found.</li>';
+// Toggle between sign-in and sign-up forms
+function toggleForm(formType) {
+    const signupForm = document.getElementById('signup-form');
+    const signinForm = document.getElementById('signin-form');
+    
+    if (formType === 'signup') {
+        signupForm.classList.remove('hidden');
+        signinForm.classList.add('hidden');
     } else {
-        filteredProviders.forEach(provider => {
-            const li = document.createElement('li');
-            li.textContent = provider;
-            providerList.appendChild(li);
-        });
+        signinForm.classList.remove('hidden');
+        signupForm.classList.add('hidden');
     }
 }
 
-function addAppointment() {
-    const provider = document.getElementById('appointmentProvider').value;
-    const date = document.getElementById('appointmentDate').value;
+// Sign-Up Function
+function signUp() {
+    const username = document.getElementById('signup-username').value;
+    const password = document.getElementById('signup-password').value;
+    const email = document.getElementById('signup-email').value;
 
-    if (provider && date) {
-        const appointmentList = document.getElementById('appointmentList');
-        const li = document.createElement('li');
-        li.textContent = `${provider} on ${new Date(date).toLocaleDateString()}`;
-        appointmentList.appendChild(li);
+    if (username && password && email) {
+        const user = {
+            username: username,
+            password: password,
+            email: email
+        };
 
-        // Clear input fields
-        document.getElementById('appointmentProvider').value = '';
-        document.getElementById('appointmentDate').value = '';
+        // Add user to the users array (simulating database storage)
+        users.push(user);
+        alert('Sign-up successful! Please sign in.');
+        
+        // Hide sign-up and show sign-in form
+        toggleForm('signin');
     } else {
-        alert('Please provide both provider and date.');
+        alert('Please fill out all fields.');
     }
 }
 
-function addProgress() {
-    const note = document.getElementById('progressNote').value;
+// Sign-In Function
+function signIn() {
+    const username = document.getElementById('signin-username').value;
+    const password = document.getElementById('signin-password').value;
 
-    if (note) {
-        const progressList = document.getElementById('progressList');
-        const li = document.createElement('li');
-        li.textContent = note;
-        progressList.appendChild(li);
+    // Check if user exists
+    const user = users.find(user => user.username === username && user.password === password);
 
-        // Clear input field
-        document.getElementById('progressNote').value = '';
+    if (user) {
+        alert('Sign-in successful! Welcome ' + user.username);
+        // Redirect to the main page or user dashboard (depending on your app's flow)
     } else {
-        alert('Please add a progress note.');
+        alert('Invalid username or password.');
     }
 }
