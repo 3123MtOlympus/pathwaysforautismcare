@@ -1,6 +1,3 @@
-// scripts.js
-
-// Temporary storage for users (in a real app, this would be handled with a backend)
 let users = [];
 
 // Toggle between sign-in and sign-up forms
